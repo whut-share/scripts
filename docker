@@ -1,1 +1,1 @@
-nvidia-docker run -it -p 8003:8003 -v /home/gsy/:/home/code --ipc=host --name mxnet_gsy -e LINES=$(tput lines) -e COLUMNS=$(tput cols) registry.docker-cn.com/mxnet/python:1.1.0_gpu_cuda8 bash
+nvidia-docker run -it -p 8008:8008 -v /home/gsy/:/home/code --ipc=host --name rec_2 -e LINES=$(tput lines) -e COLUMNS=$(tput cols) docker.io/tensorflow/tensorflow:1.4.1-gpu env LANG=C.UTF-8 bash
