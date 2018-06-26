@@ -1,1 +1,3 @@
-nvidia-docker run -it -p 8008:8008 -v /home/gsy/:/home/code --ipc=host --name rec_2 -e LINES=$(tput lines) -e COLUMNS=$(tput cols) docker.io/tensorflow/tensorflow:1.4.1-gpu env LANG=C.UTF-8 bash
+nvidia-docker run -it -p 8004:8004 -v /home/ai-test/code:/home/code --ipc=host --name rec LINES=$(tput lines) -e COLUMNS=$(tput cols) registry.docker-cn.com/tensorflow/tensorflow:1.4.0-gpu-py3 env LANG=C.UTF-8 bash
+
+nvidia-docker run -it -p 8008:8008 -v /home/gsy/:/home/code --ipc=host --name rec -e LINES=$(tput lines) -e COLUMNS=$(tput cols) registry.docker-cn.com/tensorflow/tensorflow:1.4.1-gpu env LANG=C.UTF-8 bash
