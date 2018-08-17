@@ -1,0 +1,14 @@
+错误一：
+      错误信息：    from tensorflow.python.keras._impl.keras.backend import abs    
+                   ImportError: cannot import name 'abs'
+     
+      错误原因：  可能同时安装了 CPU 和 GPU 版的 TensorFlow引起
+
+      讲解方法：  1.卸载 TensorFlow CPU 和 GPU 版本
+
+                  pip uninstall tensorflow
+                  pip uninstall tensorflow-gpu 
+                  
+                 2.重新安装 TensorFlow GPU 版本
+                 
+                   pip install tensorflow-gpu 
