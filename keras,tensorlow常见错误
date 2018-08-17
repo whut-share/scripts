@@ -11,4 +11,12 @@
                   
                  2.重新安装 TensorFlow GPU 版本
                  
-                   pip install tensorflow-gpu 
+                   pip install tensorflow-gpu
+                  
+错误二：
+      错误信息：  TypeError: load_weights() got an unexpected keyword argument 'skip_mismatch'     
+                   
+     
+      错误原因：  keras版本引起，2.0版本会有问题，2.1.5版本正常
+
+      讲解方法：  重新安装2.1.5及以上keras版本
