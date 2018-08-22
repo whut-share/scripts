@@ -1,0 +1,16 @@
+1. 查看Gpu编号 watch nvidia-smi
+
+2.程序开头指定程序运行的Gpu
+  os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+
+3.创建tensorflow的Session
+  import os
+  from keras.backend.tensorflow_backend import set_session
+
+
+  config = tf.ConfigProto()
+  config.gpu_options.per_process_gpu_memory_fraction = 0.1
+  set_session(tf.Session(config=config))
+
+4.程序运行完毕，关闭Session
+  K.clear_session()
