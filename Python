@@ -4,4 +4,11 @@ Python常用方法记录：
     if __name__ == "__main__" and __package__ is None:
          如果是：返回True
          __package__是相对导入设立的一个属性。 具体参见：https://segmentfault.com/a/1190000000494023
+         
+2.python的sys.path: 
+    Python中的模块搜索路径列表，可手动添加路径进入：
+        sys.path.insert(0,PATH)
+        
+
+         
   
