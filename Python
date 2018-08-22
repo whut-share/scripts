@@ -1,0 +1,7 @@
+Python常用方法记录：
+
+1.判断是否作为执行脚本：
+    if __name__ == "__main__" and __package__ is None:
+         如果是：返回True
+         __package__是相对导入设立的一个属性。 具体参见：https://segmentfault.com/a/1190000000494023
+  
