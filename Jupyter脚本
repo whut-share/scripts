@@ -1,0 +1,9 @@
+1.Jupyter-Notebook显示numpy数组图片：
+
+      import cv2
+      from matplotlib import pyplot as plt
+
+      img = cv2.imread('lenna1.png')
+
+      plt.imshow(img)
+      plt.show()
