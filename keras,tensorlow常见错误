@@ -20,3 +20,12 @@
       错误原因：  keras版本引起，2.0版本会有问题，2.1.5版本正常
 
       讲解方法：  重新安装2.1.5及以上keras版本
+      
+错误三：
+
+      错误信息：TypeError: while_loop() got an unexpected keyword argument 'maximum_iterations'
+      
+      
+      错误原因：Keras和Tensorflow版本不匹配。
+      
+      Keras 2.1.5 匹配 Tensorflow 1.4
