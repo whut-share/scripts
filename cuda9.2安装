@@ -1,0 +1,6 @@
+docker安装：https://segmentfault.com/a/1190000016822352
+nvidia-docker安装：https://github.com/NVIDIA/nvidia-docker/blob/master/README.md
+docker卸载：https://kiwenlau.com/note/2018/07/10/uninstall-docker/
+cuda安装：https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/
+cudnn安装：
+显卡驱动安装：https://www.jianshu.com/p/358bf6ff88e4
