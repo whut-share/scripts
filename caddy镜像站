@@ -1,0 +1,81 @@
+:10080 {
+ gzip
+basicauth / admin ss123456
+ proxy / https://www.google.com
+}
+:10081 {
+ gzip
+basicauth / admin ss123456
+ proxy / https://scholar.google.com
+}
+
+xshell 连接服务器 执行命令
+
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
+ 
+
+caddy 安装完成
+
+配置文件
+
+echo ":80 {
+ gzip
+basicauth / admin Mr96.me
+ proxy / https://scholar.google.com
+}" >> /usr/local/caddy/Caddyfile
+/etc/init.d/caddy restart
+三、访问镜像
+输入服务器 IP 地址，然后输入设置的
+
+用户名：admin 密码：Mr96.me
+
+即可访问镜像
+
+四、说明及常见问题
+IP 地址无法访问镜像
+
+可能是防火墙的问题，开放防火墙端口即可。
+
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 端口 -j ACCEPT
+
+ 
+
+说明：
+
+启动：service caddy start
+停止：service caddy stop
+重启：service caddy restart
+查看状态：service caddy status
+查看Caddy启动日志： tail -f /tmp/caddy.log
+
+Caddy配置文件位置：/usr/local/caddy/Caddyfile
+
+ 
+
+echo ":80  代理80端口，所以直接访问服务器 IP 就可以了
+
+basicauth / admin Mr96.me   设置访问密码，用户名：admin 密码：Mr96.me
+
+proxy / https://scholar.google.com    代理 谷歌学术
+
+例：
+
+如果代理 google 就改一下配置文件
+
+echo ":81 {
+ gzip
+basicauth / admin Mr96.me
+ proxy / https://www.google.com
+}" >> /usr/local/caddy/Caddyfile
+/etc/init.d/caddy restart
+把代理端口换其成其他未用端口，不设置密码可以删除第三行，然后访问 IP:81
+
+无法访问记得放行刚设置的 81 端口
+
+ 
+
+卸载Caddy
+
+卸载不会删除虚拟主机的内容，只会删除Caddy自身和配置文件。
+
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh && bash caddy_install.sh uninstall
